@@ -10,6 +10,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class DetailActivity extends AppCompatActivity {
 
+    public static final String EXTRA_TOPIC = "com.example.assignmentone.extra.TOPIC";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,8 +1,8 @@
 package com.example.assignmentone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,11 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int[] TOPIC_BUTTON_IDS = {
             R.id.buttonFacilities, R.id.buttonEvents, R.id.buttonClubs, R.id.buttonSupport
-    };
-
-    private static final int[] TOPIC_LABEL_IDS = {
-            R.string.label_facilities, R.string.label_events,
-            R.string.label_clubs, R.string.label_support
     };
 
     @Override
@@ -36,13 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpTopicButtons() {
         for (int topic = 0; topic < TOPIC_BUTTON_IDS.length; topic++) {
-            showClickedMessage(TOPIC_BUTTON_IDS[topic], TOPIC_LABEL_IDS[topic]);
+            openTopicOnClick(TOPIC_BUTTON_IDS[topic], topic);
         }
     }
 
-    private void showClickedMessage(int buttonId, int labelId) {
+    private void openTopicOnClick(int buttonId, int topic) {
         ImageButton button = findViewById(buttonId);
-        button.setOnClickListener(v -> Toast.makeText(this,
-                getString(labelId) + " clicked", Toast.LENGTH_SHORT).show());
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra(DetailActivity.EXTRA_TOPIC, topic);
+            startActivity(intent);
+        });
     }
 }
