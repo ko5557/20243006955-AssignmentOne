@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Topic buttons, in the same order as the arrays in res/values/arrays.xml.
     private static final int[] TOPIC_BUTTON_IDS = {
             R.id.buttonFacilities, R.id.buttonEvents, R.id.buttonClubs, R.id.buttonSupport
     };
@@ -29,12 +30,18 @@ public class MainActivity extends AppCompatActivity {
         setUpTopicButtons();
     }
 
+    /**
+     * Attaches a click listener to each of the four topic image buttons.
+     */
     private void setUpTopicButtons() {
         for (int topic = 0; topic < TOPIC_BUTTON_IDS.length; topic++) {
             openTopicOnClick(TOPIC_BUTTON_IDS[topic], topic);
         }
     }
 
+    /**
+     * Opens the detail screen, passing the topic index as the unique identifier.
+     */
     private void openTopicOnClick(int buttonId, int topic) {
         ImageButton button = findViewById(buttonId);
         button.setOnClickListener(v -> {

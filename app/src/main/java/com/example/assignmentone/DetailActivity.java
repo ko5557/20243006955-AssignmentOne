@@ -14,6 +14,7 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "com.example.assignmentone.extra.TOPIC";
 
+    // Display names for the four topics, matching the order of arrays.xml.
     private static final int[] TOPIC_NAME_IDS = {
             R.string.label_facilities, R.string.label_events,
             R.string.label_clubs, R.string.label_support
@@ -34,6 +35,9 @@ public class DetailActivity extends AppCompatActivity {
         showTopic(getIntent().getIntExtra(EXTRA_TOPIC, 0));
     }
 
+    /**
+     * Fills the header and the scrolling body from the arrays in arrays.xml.
+     */
     private void showTopic(int topic) {
         String[] titles = getResources().getStringArray(R.array.string_array_titles);
         String[] contents = getResources().getStringArray(R.array.string_array_content);
@@ -52,6 +56,9 @@ public class DetailActivity extends AppCompatActivity {
         content.setText(contents[topic]);
     }
 
+    /**
+     * Resolves a drawable name from arrays.xml to a resource id.
+     */
     private int drawableId(String name) {
         return getResources().getIdentifier(name, DRAWABLE_TYPE, getPackageName());
     }
