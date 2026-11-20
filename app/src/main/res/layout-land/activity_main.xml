@@ -20,6 +20,11 @@
             android:scaleType="centerCrop"
             android:src="@drawable/img_main_banner" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/banner_scrim" />
+
         <TextView
             android:id="@+id/textBannerTitle"
             android:layout_width="match_parent"
