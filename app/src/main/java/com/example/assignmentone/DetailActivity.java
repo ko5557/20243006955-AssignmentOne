@@ -14,12 +14,6 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "com.example.assignmentone.extra.TOPIC";
 
-    // Display names for the four topics, matching the order of arrays.xml.
-    private static final int[] TOPIC_NAME_IDS = {
-            R.string.label_facilities, R.string.label_events,
-            R.string.label_clubs, R.string.label_support
-    };
-
     private static final String DRAWABLE_TYPE = "drawable";
 
     @Override
@@ -47,7 +41,7 @@ public class DetailActivity extends AppCompatActivity {
         image.setImageResource(drawableId(images[topic].trim()));
 
         TextView name = findViewById(R.id.textTopicName);
-        name.setText(TOPIC_NAME_IDS[topic]);
+        name.setText(Topics.LABEL_IDS[topic]);
 
         TextView title = findViewById(R.id.textTopicTitle);
         title.setText(titles[topic].trim());
