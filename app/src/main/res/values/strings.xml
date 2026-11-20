@@ -6,4 +6,6 @@
     <string name="label_events">Events</string>
     <string name="label_clubs">Clubs</string>
     <string name="label_support">Support</string>
+    <string name="placeholder_title">Topic title</string>
+    <string name="placeholder_content">Place saver text for the topic content.</string>
 </resources>
